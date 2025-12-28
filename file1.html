@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #222;
+            color: #fff;
+        }
+
+        .navbar h1 {
+            font-size: 1.5rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .cart-count {
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-left: 5px;
+            background: crimson;
+
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, #033a72, #089ed0);
+            color: #fff;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+
+        .products {
+            padding: 3rem 2rem;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .product-card button {
+            padding: 0.6rem 1.2rem;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #c75f03;
+            font-size: 1rem;
+        }
+
+        .product-card button:hover {
+            background: #efae2c;
+        }
+
+
+        .about {
+            background: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            color: #555;
+        }
+
+
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <h1>E-Commerce</h1>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li>
+                <a href="#">Cart
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <section class="hero" id="hero">
+        <h2>Welcome to StyleStore</h2>
+        <p>Get your perfect dress</p>
+    </section>
+
+
+    <section class="products" id="products">
+        <h2>Our Products</h2>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/7671168/pexels-photo-7671168.jpeg" alt="Product 1">
+                <h3>Product One</h3>
+                <p>$34.65</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/5698851/pexels-photo-5698851.jpeg" alt=" Product 2">
+                <h3>Product Two</h3>
+                <p>$102.11</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/3735633/pexels-photo-3735633.jpeg" alt="Product 3">
+                <h3>Product Three</h3>
+                <p>$25.87</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>
+            This is a one stop shop offering everyone nice shirts, cool pants, jeans, polo and a lot of things.
+        </p>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 E-Commerce. All rights are reserved.</p>
+    </footer>
+
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById("cartCount").innerText = cartCount;
+        }
+    </script>
+
+</body>
+
+</html>
